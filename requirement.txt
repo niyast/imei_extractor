@@ -1,0 +1,19 @@
+Write a Python 3 script using FastAPI that exposes a POST API endpoint `/extract-imei/` where a user uploads a file (PDF or image). The API should:
+
+1. Accept a single file upload using FastAPI's UploadFile.
+2. If the file is a PDF:
+   - Try to extract text using `pdfplumber`.
+   - If that fails or returns empty, fallback to OCR by converting PDF pages to images using `pdf2image` and running `pytesseract` on each page.
+3. If the file is an image (JPG, PNG, etc.), run OCR using `pytesseract` and `Pillow`.
+4. Search the extracted text for **15-digit numbers** using regex, and validate them using the **Luhn algorithm** to check if they're valid IMEI numbers.
+5. Return a JSON response with all valid IMEIs found in the text.
+
+Add logging using Python’s `logging` module:
+- Log each upload with filename.
+- Log whether it was parsed with `pdfplumber` or OCR.
+- Log number of characters extracted and IMEIs found.
+- Log to both console and a file named `imei_extractor.log`.
+
+Ensure the API includes OpenAPI docs and can be run using `uvicorn`. Also include instructions on required Python packages and system dependencies (like `tesseract-ocr`, `poppler-utils`).
+
+Make the script clean, modular, and production-ready.
