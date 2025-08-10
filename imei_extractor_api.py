@@ -241,4 +241,4 @@ async def extract_imei(file: UploadFile = File(...)):
 
 if __name__ == "__main__":
     # Run the app with: python imei_extractor_api.py
-    uvicorn.run("imei_extractor_api:app", host="0.0.0.0", port=8000, reload=False)
+    uvicorn.run("imei_extractor_api:app", host="0.0.0.0", port=8010, reload=False)

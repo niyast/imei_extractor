@@ -46,11 +46,11 @@ pip install -r requirements.txt
 ```bash
 python imei_extractor_api.py
 ```
-Server will start on `http://0.0.0.0:8000`. OpenAPI docs: `http://localhost:8000/docs`.
+Server will start on `http://0.0.0.0:8080`. OpenAPI docs: `http://localhost:8080/docs`.
 
 ### Using uvicorn
 ```bash
-uvicorn imei_extractor_api:app --host 0.0.0.0 --port 8000
+uvicorn imei_extractor_api:app --host 0.0.0.0 --port 8080
 ```
 
 ## API Usage
@@ -73,7 +73,7 @@ uvicorn imei_extractor_api:app --host 0.0.0.0 --port 8000
 ```bash
 curl -X POST \
   -F "file=@/path/to/your/file.pdf" \
-  http://localhost:8000/extract-imei/
+  http://localhost:8080/extract-imei/
 ```
 
 ## Notes
